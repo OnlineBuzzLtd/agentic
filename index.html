@@ -1,157 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Agentic AI Products | Get Started</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic AI Made Simple | Get Started Today</title>
   <style>
     /* Reset & Base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Segoe UI', sans-serif; line-height:1.6; color:#333; }
-    a { color:#0066ff; text-decoration:none; }
-    img { max-width:100%; display:block; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.6; background: #f9f9f9; }
+    a { color: #0066ff; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     /* Container */
-    .container { width:90%; max-width:1200px; margin:0 auto; padding:2rem 0; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 3rem 0; }
 
-    /* Header / Hero */
+    /* Hero Section */
     header {
-      background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-      color: #fff;
+      background: #ffffff;
       padding: 4rem 0;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    header h1 { font-size:2.5rem; margin-bottom:1rem; }
-    header p { font-size:1.2rem; opacity:0.9; }
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.125rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-    /* Options Grid */
-    .options {
+    /* Features Section */
+    .features {
+      margin: 4rem 0;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #111;
+    }
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap:2rem;
-      margin:3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
-    .card {
-      background:#fafafa;
-      padding:2rem;
-      border-radius:8px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.05);
-      transition:transform .2s,box-shadow .2s;
+    .feature-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow:0 8px 16px rgba(0,0,0,0.1);
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
-    .card h3 { margin-bottom:0.5rem; font-size:1.3rem; }
-    .card p { font-size:0.95rem; opacity:0.8; }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #0066ff;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
 
-    /* Lead Form */
-    .lead-form {
-      background:#fff;
-      border:1px solid #e0e0e0;
-      padding:2rem;
-      border-radius:8px;
-      max-width:500px;
-      margin:0 auto 4rem;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    /* Lead Form Section */
+    .lead-section {
+      background: #ffffff;
+      padding: 3rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      max-width: 600px;
+      margin: 0 auto 4rem;
     }
-    .lead-form h2 { margin-bottom:1rem; text-align:center; }
-    .lead-form .form-group {
-      margin-bottom:1rem;
+    .lead-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: #111;
+      text-align: center;
     }
-    .lead-form label { display:block; margin-bottom:0.5rem; font-weight:600; }
-    .lead-form input, .lead-form textarea {
-      width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;
-      font-size:1rem;
+    form { margin-top: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
     }
-    .lead-form button {
-      display:block;
-      width:100%;
-      padding:0.75rem;
-      background:#0066ff;
-      color:#fff;
-      border:none;
-      border-radius:4px;
-      font-size:1rem;
-      cursor:pointer;
-      transition:background .2s;
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #111;
     }
-    .lead-form button:hover {
-      background:#0051cc;
+    .form-group textarea { resize: vertical; }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 4px;
+      background: #0066ff;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
+    .btn-submit:hover { background: #0051cc; }
 
     /* Footer */
     footer {
-      text-align:center;
-      padding:1rem 0;
-      font-size:0.9rem;
-      color:#777;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.875rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
-
-  <!-- Hero -->
   <header>
     <div class="container">
-      <h1>Build Your Agentic AI Products with Us</h1>
-      <p>From autonomous chatbots to self-driving analytics agents — explore our suite of AI solutions.</p>
+      <h1>Agentic AI Made Simple</h1>
+      <p>Imagine smart assistants that work on their own—booking meetings, summarizing data, or automating tasks—so you can focus on what matters.</p>
     </div>
   </header>
 
-  <!-- Options -->
-  <section class="container">
-    <h2 style="text-align:center; margin-bottom:1.5rem;">Our Offerings</h2>
-    <div class="options">
-      <div class="card">
-        <h3>🤖 Autonomous Chatbots</h3>
-        <p>Deploy 24/7 conversational agents that understand, learn, and evolve with your users.</p>
+  <section class="container features">
+    <h2>How Our AI Agents Help You</h2>
+    <div class="grid">
+      <div class="feature-card">
+        <h3>Smart Chat Help</h3>
+        <p>24/7 virtual assistants that answer questions, guide customers, and gather feedback without human intervention.</p>
       </div>
-      <div class="card">
-        <h3>📊 Data-Driven AI Analysts</h3>
-        <p>Leverage agentic AI to mine & visualize data, spot trends, and generate business insights.</p>
+      <div class="feature-card">
+        <h3>Instant Data Insights</h3>
+        <p>Automated agents that sift through reports and deliver clear insights—no data science degree required.</p>
       </div>
-      <div class="card">
-        <h3>⚙️ Workflow Automation Agents</h3>
-        <p>Automate complex workflows end-to-end, from ticket triage to report generation.</p>
+      <div class="feature-card">
+        <h3>Workflow On Autopilot</h3>
+        <p>Set up AI to handle repetitive work: approvals, reminders, and report generation—all behind the scenes.</p>
       </div>
-      <div class="card">
-        <h3>🔒 Secure Compliance Bots</h3>
-        <p>Ensure policy adherence and audit readiness with smart compliance-monitoring agents.</p>
+      <div class="feature-card">
+        <h3>Secure Monitoring</h3>
+        <p>Compliance bots that watch over processes, alerting you only when action is needed.</p>
       </div>
     </div>
   </section>
 
-  <!-- Lead Capture Form -->
-  <section>
-    <div class="lead-form">
-      <h2>Get Started &amp; Receive a Free Consultation</h2>
-      <form action="https://your-backend.example.com/lead" method="POST">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Jane Doe" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        </div>
-        <div class="form-group">
-          <label for="company">Company / Organization</label>
-          <input type="text" id="company" name="company" placeholder="Awesome Inc.">
-        </div>
-        <div class="form-group">
-          <label for="message">What Are You Looking For?</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project…"></textarea>
-        </div>
-        <button type="submit">Submit &amp; Let's Talk →</button>
-      </form>
-    </div>
+  <section class="lead-section">
+    <h2>Ready to Automate with AI?</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="project">What Do You Need?</label>
+        <textarea id="project" name="project" rows="4" placeholder="Describe your idea in simple terms..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Get My Free AI Consultation →</button>
+    </form>
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Your Company Name&nbsp;|&nbsp;All rights reserved.
+    &copy; 2025 Agentic AI Co. &bull; Crafted for simplicity and power.
   </footer>
-
 </body>
 </html>
