@@ -9,36 +9,127 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" />
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; }
-    .utility-bar { background: #f4f6f9; padding: 0.5rem 1rem; }
-    .utility-bar a { margin-right: 1rem; color: #16325c; text-decoration: none; font-size: 0.875rem; }
-    .utility-bar span { color: #16325c; font-size: 0.875rem; }
-    .secondary-nav { border-bottom: 1px solid #d8dde6; padding: 1rem; }
-    .secondary-nav .brand { margin-right: 2rem; }
-    .secondary-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-    .secondary-nav li { margin-right: 1.5rem; }
-    .secondary-nav a { color: #16325c; font-weight: 600; text-decoration: none; }
-    .hero { position: relative; overflow: hidden; padding: 4rem 1rem; background: linear-gradient(90deg, #fce8f3 0%, #ffffff 100%); }
-    .hero h1 { font-size: 2.5rem; color: #0b3c5d; margin-bottom: 1rem; }
-    .hero p { font-size: 1rem; color: #16325c; margin-bottom: 1.5rem; }
-    .hero .btn-primary { background-color: #0070d2; color: #ffffff; font-weight: bold; }
-    .hero .btn-secondary { background-color: transparent; border: 2px solid #0070d2; color: #0070d2; font-weight: bold; margin-left: 1rem; }
-    .hero-image { max-width: 100%; border-radius: 0.75rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; }
-    .share-icons { margin-top: 1rem; }
-    .share-icons a { margin-right: 0.75rem; color: #16325c; font-size: 1.125rem; }
-    .hero-grid { display: flex; flex-wrap: wrap; align-items: center; }
-    .hero-content { flex: 1 1 50%; max-width: 50%; padding: 1rem; }
-    .hero-media { flex: 1 1 50%; max-width: 50%; padding: 1rem; text-align: right; }
-    @media (max-width: 768px) {
-      .hero-content, .hero-media { max-width: 100%; text-align: left; }
-      .secondary-nav ul { flex-wrap: wrap; }
+    body { font-family: 'Inter', Arial, sans-serif; margin: 0; padding: 0; }
+    /* Utility Bar */
+    .utility-bar {
+      background: #f4f6f9;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .utility-bar .links a,
+    .utility-bar .actions a,
+    .utility-bar .actions span {
+      margin-right: 1rem;
+      color: #16325c;
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    /* Secondary Navigation */
+    .secondary-nav {
+      border-bottom: 1px solid #d8dde6;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .secondary-nav .brand { margin-bottom: 0.5rem; }
+    .secondary-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .secondary-nav li { margin: 0.5rem; }
+    .secondary-nav a {
+      color: #16325c;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 1rem;
+      background: linear-gradient(90deg, #fce8f3 0%, #ffffff 100%);
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-content, .hero-media {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #0b3c5d;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #16325c;
+      margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+      background-color: #0070d2;
+      color: #ffffff;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #0070d2;
+      color: #0070d2;
+      font-weight: bold;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 0.75rem;
+      box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+      display: block;
+      margin: 0 auto;
+    }
+    .share-icons {
+      margin-top: 1rem;
+      display: flex;
+    }
+    .share-icons a {
+      margin-right: 0.75rem;
+      color: #16325c;
+      font-size: 1.125rem;
+    }
+    /* Section containers */
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    @media (min-width: 600px) {
+      .hero-content { flex: 1 1 50%; max-width: 50%; }
+      .hero-media   { flex: 1 1 50%; max-width: 50%; text-align: right; }
+    }
+    @media (max-width: 600px) {
+      .utility-bar, .secondary-nav { flex-direction: column; align-items: flex-start; }
+      .secondary-nav ul { flex-direction: column; }
+      .secondary-nav li { margin: 0.25rem 0; }
     }
   </style>
 </head>
 <body>
+
   <!-- Utility Bar -->
-  <div class="utility-bar slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
-    <div class="slds-grid slds-grid_vertical-align-center">
+  <div class="utility-bar">
+    <div class="links">
       <a href="#">Products</a>
       <a href="#">Industries</a>
       <a href="#">Customers</a>
@@ -46,29 +137,30 @@
       <a href="#">Support</a>
       <a href="#">Company</a>
     </div>
-    <div class="slds-grid slds-grid_vertical-align-center">
+    <div class="actions">
       <a href="#">Contact Us</a>
       <span>07779 305853</span>
-      <button class="slds-button slds-button_neutral slds-m-left_small">Try for free</button>
+      <button class="slds-button slds-button_neutral">Try for free</button>
     </div>
   </div>
 
   <!-- Secondary Navigation -->
-  <nav class="secondary-nav slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+  <nav class="secondary-nav">
     <div class="brand">
-      <!-- Inline SVG Logo -->
       <svg width="260" height="40" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="30" font-family="'Inter', sans-serif" font-size="24" fill="#1a73e8">Online Buzz Marketing LTD</text>
+        <text x="0" y="30" font-family="'Inter', sans-serif" font-size="24" fill="#1a73e8">
+          Online Buzz Marketing LTD
+        </text>
       </svg>
     </div>
-    <ul class="slds-grid slds-grid_vertical-align-center">
+    <ul>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#how-it-works">How it works</a></li>
       <li><a href="#examples">Use Cases</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#next-steps">Next Steps</a></li>
     </ul>
-    <div>
+    <div class="actions">
       <button class="slds-button slds-button_brand">Watch Demo</button>
       <button class="slds-button slds-button_outline-brand">Join Community</button>
     </div>
@@ -76,7 +168,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="overview">
-    <div class="hero-grid slds-container">
+    <div class="hero-grid">
       <div class="hero-content">
         <h1>What are Autonomous Agents? A Complete Guide</h1>
         <p>Autonomous agents are an advanced form of AI that continuously learn and optimize tasks—perfect for boosting efficiency and engagement in marketing workflows.</p>
@@ -96,7 +188,7 @@
 
   <!-- Table of Contents -->
   <section id="toc" class="slds-section slds-p-around_large">
-    <div class="slds-container slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+    <div class="section-container slds-grid slds-grid_vertical-align-center slds-grid_align-center">
       <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12">
         <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_medium">Table of Contents</h2>
         <ul class="slds-list_dotted slds-p-left_medium">
@@ -112,10 +204,14 @@
 
   <!-- ROI Calculator Section -->
   <section id="roi" class="slds-section slds-p-around_large slds-theme_shade">
-    <div class="slds-container slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+    <div class="section-container slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
       <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
         <h2 class="slds-text-heading_x-large">Calculate Your ROI with Agentic Builder</h2>
-        <p class="slds-text-body_regular slds-m-bottom_medium">Discover how much time and budget Online Buzz Marketing LTD can help you reclaim by integrating our autonomous agent creation platform. Answer a few simple questions to estimate savings and efficiency gains.</p>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Discover how much time and budget Online Buzz Marketing LTD can help you reclaim by integrating
+          our autonomous agent creation platform. Answer a few simple questions to estimate savings and
+          efficiency gains.
+        </p>
         <button class="slds-button slds-button_brand">Start ROI Calculator</button>
       </div>
       <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-text-align_right">
@@ -126,9 +222,12 @@
 
   <!-- How It Works -->
   <section id="how-it-works" class="slds-section slds-p-around_large">
-    <div class="slds-container">
+    <div class="section-container">
       <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">How Agentic Builders Work</h2>
-      <p class="slds-text-body_regular slds-text-align_center slds-m-bottom_large">Agentic Builder by Online Buzz Marketing LTD streamlines the creation and deployment of autonomous agents through an intuitive interface and powerful AI engine. Here's the core workflow:</p>
+      <p class="slds-text-body_regular slds-text-align_center slds-m-bottom_large">
+        Agentic Builder by Online Buzz Marketing LTD streamlines the creation and deployment of autonomous
+        agents through an intuitive interface and powerful AI engine. Here's the core workflow:
+      </p>
       <ul class="slds-grid slds-wrap slds-gutters">
         <li class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
           <h4 class="slds-text-heading_small">Design Agent</h4>
@@ -152,15 +251,94 @@
 
   <!-- Examples Section -->
   <section id="examples" class="slds-section slds-p-around_large slds-theme_shade">
-    <div class="slds-container">
-      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">3 Use Cases Powered by Agentic Builder</h2>
+    <div class="section-container">
+      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">
+        3 Use Cases Powered by Agentic Builder
+      </h2>
       <div class="slds-grid slds-wrap slds-gutters">
         <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
           <div class="slds-card">
             <div class="slds-card__header slds-grid">
-              <div class="slds-media__figure"><img src="images/usecase-chat.png" alt="Chat support" /></div>
-              <div class="slds-media__body"><h3 class="slds-text-heading_small">24/7 Chat Support</h3></div>
+              <div class="slds-media__figure">
+                <img src="images/usecase-chat.png" alt="Chat support" />
+              </div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">24/7 Chat Support</h3>
+              </div>
             </div>
             <div class="slds-card__body slds-card__body_inner">
               <p>Automate customer inquiries on web and mobile to reduce response times below 5 seconds.</p>
             </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <div class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <div class="slds-media__figure"><img src="images/usecase-orders.png" alt="Order processing" /></div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">Order Processing</h3>
+              </div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <p>Streamline order validations and inventory updates, cutting manual checks by 80%.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <div class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <div class="slds-media__figure"><img src="images/usecase-analytics.png" alt="Data analytics" /></div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">Data Analytics</h3>
+              </div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <p>Generate automated insights and reports to inform strategy with zero coding required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="slds-section slds-p-around_large">
+    <div class="section-container">
+      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">Insights & Resources</h2>
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+          <div class="slds-card">
+            <img src="images/resource-guide.png" alt="Guide cover" class="slds-card__header" />
+            <div class="slds-card__body slds-card__body_inner">
+              <h4 class="slds-text-heading_small">Building Agents 101</h4>
+              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Download Guide</a>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+          <div class="slds-card">
+            <img src="images/resource-blog.png" alt="Blog cover" class="slds-card__header" />
+            <div class="slds-card__body slds-card__body_inner">
+              <h4 class="slds-text-heading_small">Best Practices in AI</h4>
+              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Read Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps CTA -->
+  <section id="next-steps" class="slds-section slds-p-around_large slds-theme_shade">
+    <div class="section-container slds-text-align_center">
+      <h2 class="slds-text-heading_x-large slds-m-bottom_medium">Ready to Build Your First Agent?</h2>
+      <p class="slds-text-body_regular slds-m-bottom_large">
+        Sign up for Agentic Builder by Online Buzz Marketing LTD and launch your autonomous agent in minutes—no code required.
+      </p>
+      <button class="slds-button slds-button_brand slds-size_medium">Get Started for Free</button>
+      <button class="slds-button slds-button_outline-brand slds-size_medium">Contact Sales</button>
+    </div>
+  </section>
+
+</body>
+</html>
