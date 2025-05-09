@@ -3,118 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autonomous Agents | Socialmuz Ltd</title>
-  <!-- Salesforce Lightning Design System for consistent styling -->
+  <title>Autonomous Agents | Online Buzz Marketing LTD</title>
+  <!-- Design System CSS -->
   <link rel="stylesheet" href="https://unpkg.com/@salesforce-ux/design-system@2/assets/styles/salesforce-lightning-design-system.min.css" />
-  <!-- Custom overrides -->
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" />
   <style>
-    .slds-button_brand { background-color: #1a73e8; }
-    .site-logo { font-size: 1.25rem; font-weight: bold; color: #16325c; }
-    /* Hero background styling */
-    .hero-background {
-      background-image: url('https://images.unsplash.com/photo-1581093588401-903a441f5d90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
+    body { font-family: 'Inter', Arial, sans-serif; }
+    .utility-bar { background: #f4f6f9; padding: 0.5rem 1rem; }
+    .utility-bar a { margin-right: 1rem; color: #16325c; text-decoration: none; font-size: 0.875rem; }
+    .utility-bar span { color: #16325c; font-size: 0.875rem; }
+    .secondary-nav { border-bottom: 1px solid #d8dde6; padding: 1rem; }
+    .secondary-nav .brand { margin-right: 2rem; }
+    .secondary-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    .secondary-nav li { margin-right: 1.5rem; }
+    .secondary-nav a { color: #16325c; font-weight: 600; text-decoration: none; }
+    .hero { position: relative; overflow: hidden; padding: 4rem 1rem; background: linear-gradient(90deg, #fce8f3 0%, #ffffff 100%); }
+    .hero h1 { font-size: 2.5rem; color: #0b3c5d; margin-bottom: 1rem; }
+    .hero p { font-size: 1rem; color: #16325c; margin-bottom: 1.5rem; }
+    .hero .btn-primary { background-color: #0070d2; color: #ffffff; font-weight: bold; }
+    .hero .btn-secondary { background-color: transparent; border: 2px solid #0070d2; color: #0070d2; font-weight: bold; margin-left: 1rem; }
+    .hero-image { max-width: 100%; border-radius: 0.75rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; }
+    .share-icons { margin-top: 1rem; }
+    .share-icons a { margin-right: 0.75rem; color: #16325c; font-size: 1.125rem; }
+    .hero-grid { display: flex; flex-wrap: wrap; align-items: center; }
+    .hero-content { flex: 1 1 50%; max-width: 50%; padding: 1rem; }
+    .hero-media { flex: 1 1 50%; max-width: 50%; padding: 1rem; text-align: right; }
+    @media (max-width: 768px) { .hero-content, .hero-media { max-width: 100%; text-align: left; } .secondary-nav ul { flex-wrap: wrap; } }
   </style>
 </head>
-<body class="slds-scope">
-  <!-- Global Header -->
-  <header class="slds-global-header_container">
-    <div class="slds-global-header slds-grid slds-grid_align-spread">
-      <div class="slds-global-header__item">
-        <a href="#" class="site-logo">Socialmuz Ltd</a>
-      </div>
-      <nav class="slds-global-header__item slds-global-header__item--utility">
-        <ul class="slds-list_horizontal slds-has-dividers_right">
-          <li><a href="#overview" class="slds-button slds-button_neutral">Overview</a></li>
-          <li><a href="#features" class="slds-button slds-button_neutral">Features</a></li>
-          <li><a href="#benefits" class="slds-button slds-button_neutral">Benefits</a></li>
-          <li><a href="#contact" class="slds-button slds-button_neutral">Contact</a></li>
-        </ul>
-      </nav>
+<body>
+  <!-- Utility Bar -->
+  <div class="utility-bar slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+    <div class="slds-grid slds-grid_vertical-align-center">
+      <a href="#">Products</a>
+      <a href="#">Industries</a>
+      <a href="#">Customers</a>
+      <a href="#">Learning</a>
+      <a href="#">Support</a>
+      <a href="#">Company</a>
     </div>
-  </header>
+    <div class="slds-grid slds-grid_vertical-align-center">
+      <a href="#">Contact Us</a>
+      <span>07779 305853</span>
+      <button class="slds-button slds-button_neutral slds-m-left_small">Try for free</button>
+    </div>
+  </div>
+
+  <!-- Secondary Navigation -->
+  <nav class="secondary-nav slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+    <div class="brand">
+      <!-- Inline SVG Logo -->
+      <svg width="200" height="40" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="30" font-family="'Inter', sans-serif" font-size="24" fill="#1a73e8">Online Buzz Marketing LTD</text>
+      </svg>
+    </div>
+    <ul class="slds-grid slds-grid_vertical-align-center">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#use-cases">Use Cases</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+    <div>
+      <button class="slds-button slds-button_brand">Watch Demo</button>
+      <button class="slds-button slds-button_outline-brand">Join Community</button>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="slds-hero slds-hero--medium slds-theme--default slds-p-around_xx-large hero-background">
-    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
-      <div class="slds-col slds-size_1-of-2">
-        <h1 class="slds-text-heading_xx-large slds-m-bottom_small">Autonomous Agents</h1>
-        <p class="slds-text-body_large slds-m-bottom_medium">Deploy intelligent agents that navigate tasks independently, accelerating your business outcomes.</p>
-        <a href="#contact" class="slds-button slds-button_brand">Get Started</a>
+  <section class="hero" id="overview">
+    <div class="hero-grid container">
+      <div class="hero-content">
+        <h1>What are Autonomous Agents? A Complete Guide</h1>
+        <p>Autonomous agents are an advanced form of AI that continuously learn and optimize tasks—perfect for boosting efficiency and engagement in marketing workflows.</p>
+        <button class="slds-button btn-primary">Get Started</button>
+        <button class="slds-button btn-secondary">Learn More</button>
+        <div class="share-icons">
+          <a href="#" aria-label="Share"><svg class="slds-icon"><use xlink:href="#share"></use></svg></a>
+          <a href="#" aria-label="Tweet"><svg class="slds-icon"><use xlink:href="#twitter"></use></svg></a>
+          <a href="#" aria-label="Copy Link"><svg class="slds-icon"><use xlink:href="#link"></use></svg></a>
+        </div>
       </div>
-      <div class="slds-col slds-size_1-of-2 slds-text-align_right">
-        <img src="https://images.unsplash.com/photo-1581092795363-dd47b00521ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Autonomous agent illustration" style="max-width:100%; border-radius:8px;" />
+      <div class="hero-media">
+        <img src="images/hero-image.png" alt="Person using phone" class="hero-image" />
       </div>
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section id="overview" class="slds-section slds-p-around_medium">
-    <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+    <!-- Table of Contents -->
+  <section id="toc" class="slds-section slds-p-around_large">
+    <div class="slds-container slds-grid slds-grid_vertical-align-center slds-grid_align-center">
       <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12">
-        <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_small">What Are Autonomous Agents?</h2>
-        <p class="slds-text-body_regular slds-text-align_center">At Socialmuz Ltd, our Autonomous Agents use advanced AI to learn, adapt, and execute complex workflows with minimal human oversight—freeing your team to focus on what matters most.</p>
+        <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_medium">Table of Contents</h2>
+        <ul class="slds-list_dotted slds-p-left_medium">
+          <li><a href="#roi">Calculate Your ROI</a></li>
+          <li><a href="#how-it-works">How Agentic Builders Work</a></li>
+          <li><a href="#examples">3 Use Cases</a></li>
+          <li><a href="#resources">Insights & Resources</a></li>
+          <li><a href="#next-steps">Next Steps</a></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="slds-section slds-p-around_medium">
-    <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_medium">Key Features</h2>
-    <div class="slds-grid slds-wrap slds-gutters">
-      <!-- Feature cards remain unchanged -->
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-        <div class="slds-card">
-          <div class="slds-card__body slds-card__body_inner">
-            <header class="slds-media slds-media_center slds-has-flexi-truncate">
-              <div class="slds-media__figure">
-                <span class="slds-icon_container slds-icon-standard-process"><svg aria-hidden="true" class="slds-icon"><use xlink:href="https://www.slds.com/assets/icons/standard-sprite/svg/symbols.svg#process"></use></svg></span>
-              </div>
-              <div class="slds-media__body">
-                <h3 class="slds-text-heading_small">Adaptive Workflows</h3>
-              </div>
-            </header>
-            <p class="slds-m-top_small">Real-time data analysis empowers your agents to adjust processes dynamically for peak performance.</p>
+  <!-- ROI Calculator Section -->
+  <section id="roi" class="slds-section slds-p-around_large slds-theme_shade">
+    <div class="slds-container slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+        <h2 class="slds-text-heading_x-large">Calculate Your ROI with Agentic Builder</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">Discover how much time and budget Online Buzz Marketing LTD can help you reclaim by integrating our autonomous agent creation platform. Answer a few simple questions to estimate savings and efficiency gains.</p>
+        <button class="slds-button slds-button_brand">Start ROI Calculator</button>
+      </div>
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-text-align_right">
+        <img src="images/roi-widget.png" alt="ROI calculator preview" class="hero-image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="slds-section slds-p-around_large">
+    <div class="slds-container">
+      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">How Agentic Builders Work</h2>
+      <p class="slds-text-body_regular slds-text-align_center slds-m-bottom_large">Agentic Builder by Online Buzz Marketing LTD streamlines the creation and deployment of autonomous agents through an intuitive interface and powerful AI engine. Here's the core workflow:</p>
+      <ul class="slds-grid slds-wrap slds-gutters">
+        <li class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
+          <h4 class="slds-text-heading_small">Design Agent</h4>
+          <p>Define objectives, data sources, and decision rules in our drag-and-drop canvas.</p>
+        </li>
+        <li class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
+          <h4 class="slds-text-heading_small">Train Intelligence</h4>
+          <p>Leverage built-in NLP and machine learning to teach your agent from historical records.</p>
+        </li>
+        <li class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
+          <h4 class="slds-text-heading_small">Deploy Securely</h4>
+          <p>Publish to your preferred channels with enterprise-grade compliance and monitoring.</p>
+        </li>
+        <li class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
+          <h4 class="slds-text-heading_small">Optimize Continuously</h4>
+          <p>Gather real-time feedback and retrain your agent to improve automation outcomes.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Examples Section -->
+  <section id="examples" class="slds-section slds-p-around_large slds-theme_shade">
+    <div class="slds-container">
+      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">3 Use Cases Powered by Agentic Builder</h2>
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <div class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <div class="slds-media__figure"><img src="images/usecase-chat.png" alt="Chat support" /></div>
+              <div class="slds-media__body"><h3 class="slds-text-heading_small">24/7 Chat Support</h3></div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <p>Automate customer inquiries on web and mobile to reduce response times below 5 seconds.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <div class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <div class="slds-media__figure"><img src="images/usecase-orders.png" alt="Order processing" /></div>
+              <div class="slds-media__body"><h3 class="slds-text-heading_small">Order Processing</h3></div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <p>Streamline order validations and inventory updates, cutting manual checks by 80%.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <div class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <div class="slds-media__figure"><img src="images/usecase-analytics.png" alt="Data analytics" /></div>
+              <div class="slds-media__body"><h3 class="slds-text-heading_small">Data Analytics</h3></div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <p>Generate automated insights and reports to inform strategy with zero coding required.</p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- ...other feature cards... -->
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section id="benefits" class="slds-section slds-p-around_medium slds-theme_shade">
-    <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_large">Why Choose Socialmuz Agents?</h2>
-    <div class="slds-grid slds-wrap slds-gutters">
-      <!-- Benefit items unchanged -->
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="slds-section slds-p-around_large">
-    <div class="slds-grid slds-grid_align-center">
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12">
-        <h2 class="slds-text-heading_large slds-text-align_center slds-m-bottom_small">Ready to Transform?</h2>
-        <p class="slds-text-body_regular slds-text-align_center slds-m-bottom_medium">Reach out to Socialmuz Ltd to explore how autonomous agents can revolutionize your operations.</p>
-        <form class="slds-form slds-form_stacked" action="/submit" method="post">
-          <!-- Form fields unchanged -->
-        </form>
+  <!-- Resources Section -->
+  <section id="resources" class="slds-section slds-p-around_large">
+    <div class="slds-container">
+      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">Insights & Resources</h2>
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+          <div class="slds-card">
+            <img src="images/resource-guide.png" alt="Guide cover" class="slds-card__header" />
+            <div class="slds-card__body slds-card__body_inner">
+              <h4 class="slds-text-heading_small">Building Agents 101</h4>
+              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Download Guide</a>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+          <div class="slds-card">
+            <img src="images/resource-blog.png" alt="Blog cover" class="slds-card__header" />
+            <div class="slds-card__body slds-card__body_inner">
+              <h4 class="slds-text-heading_small">Best Practices in AI</h4>
+              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Read Article</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Global Footer -->
-  <footer class="slds-global-footer slds-theme_default">
-    <div class="slds-grid slds-grid_align-spread slds-p-around_medium">
-      <p>&copy; 2025 Socialmuz Ltd. All rights reserved.</p>
-      <div>
-        <a href="#" class="slds-m-right_small">Twitter</a>
-        <a href="#" class="slds-m-right_small">LinkedIn</a>
-        <a href="#">Facebook</a>
-      </div>
+  <!-- Next Steps CTA -->
+  <section id="next-steps" class="slds-section slds-p-around_large slds-theme_shade">
+    <div class="slds-container slds-text-align_center">
+      <h2 class="slds-text-heading_x-large slds-m-bottom_medium">Ready to Build Your First Agent?</h2>
+      <p class="slds-text-body_regular slds-m-bottom_large">Sign up for Agentic Builder by Online Buzz Marketing LTD and launch your autonomous agent in minutes—no code required.</p>
+      <button class="slds-button slds-button_brand slds-size_medium">Get Started for Free</button>
+      <button class="slds-button slds-button_outline-brand slds-size_medium">Contact Sales</button>
     </div>
-  </footer>
+  </section>
+
 </body>
 </html>
