@@ -29,7 +29,10 @@
     .hero-grid { display: flex; flex-wrap: wrap; align-items: center; }
     .hero-content { flex: 1 1 50%; max-width: 50%; padding: 1rem; }
     .hero-media { flex: 1 1 50%; max-width: 50%; padding: 1rem; text-align: right; }
-    @media (max-width: 768px) { .hero-content, .hero-media { max-width: 100%; text-align: left; } .secondary-nav ul { flex-wrap: wrap; } }
+    @media (max-width: 768px) {
+      .hero-content, .hero-media { max-width: 100%; text-align: left; }
+      .secondary-nav ul { flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
@@ -54,16 +57,16 @@
   <nav class="secondary-nav slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
     <div class="brand">
       <!-- Inline SVG Logo -->
-      <svg width="200" height="40" xmlns="http://www.w3.org/2000/svg">
+      <svg width="260" height="40" xmlns="http://www.w3.org/2000/svg">
         <text x="0" y="30" font-family="'Inter', sans-serif" font-size="24" fill="#1a73e8">Online Buzz Marketing LTD</text>
       </svg>
     </div>
     <ul class="slds-grid slds-grid_vertical-align-center">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#how-it-works">How it works</a></li>
-      <li><a href="#use-cases">Use Cases</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#examples">Use Cases</a></li>
       <li><a href="#resources">Resources</a></li>
+      <li><a href="#next-steps">Next Steps</a></li>
     </ul>
     <div>
       <button class="slds-button slds-button_brand">Watch Demo</button>
@@ -73,7 +76,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="overview">
-    <div class="hero-grid container">
+    <div class="hero-grid slds-container">
       <div class="hero-content">
         <h1>What are Autonomous Agents? A Complete Guide</h1>
         <p>Autonomous agents are an advanced form of AI that continuously learn and optimize tasks—perfect for boosting efficiency and engagement in marketing workflows.</p>
@@ -91,7 +94,7 @@
     </div>
   </section>
 
-    <!-- Table of Contents -->
+  <!-- Table of Contents -->
   <section id="toc" class="slds-section slds-p-around_large">
     <div class="slds-container slds-grid slds-grid_vertical-align-center slds-grid_align-center">
       <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12">
@@ -161,70 +164,3 @@
             <div class="slds-card__body slds-card__body_inner">
               <p>Automate customer inquiries on web and mobile to reduce response times below 5 seconds.</p>
             </div>
-          </div>
-        </div>
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
-          <div class="slds-card">
-            <div class="slds-card__header slds-grid">
-              <div class="slds-media__figure"><img src="images/usecase-orders.png" alt="Order processing" /></div>
-              <div class="slds-media__body"><h3 class="slds-text-heading_small">Order Processing</h3></div>
-            </div>
-            <div class="slds-card__body slds-card__body_inner">
-              <p>Streamline order validations and inventory updates, cutting manual checks by 80%.</p>
-            </div>
-          </div>
-        </div>
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
-          <div class="slds-card">
-            <div class="slds-card__header slds-grid">
-              <div class="slds-media__figure"><img src="images/usecase-analytics.png" alt="Data analytics" /></div>
-              <div class="slds-media__body"><h3 class="slds-text-heading_small">Data Analytics</h3></div>
-            </div>
-            <div class="slds-card__body slds-card__body_inner">
-              <p>Generate automated insights and reports to inform strategy with zero coding required.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resources Section -->
-  <section id="resources" class="slds-section slds-p-around_large">
-    <div class="slds-container">
-      <h2 class="slds-text-heading_x-large slds-text-align_center slds-m-bottom_medium">Insights & Resources</h2>
-      <div class="slds-grid slds-wrap slds-gutters">
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-          <div class="slds-card">
-            <img src="images/resource-guide.png" alt="Guide cover" class="slds-card__header" />
-            <div class="slds-card__body slds-card__body_inner">
-              <h4 class="slds-text-heading_small">Building Agents 101</h4>
-              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Download Guide</a>
-            </div>
-          </div>
-        </div>
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-          <div class="slds-card">
-            <img src="images/resource-blog.png" alt="Blog cover" class="slds-card__header" />
-            <div class="slds-card__body slds-card__body_inner">
-              <h4 class="slds-text-heading_small">Best Practices in AI</h4>
-              <a href="#" class="slds-button slds-button_neutral slds-m-top_small">Read Article</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Next Steps CTA -->
-  <section id="next-steps" class="slds-section slds-p-around_large slds-theme_shade">
-    <div class="slds-container slds-text-align_center">
-      <h2 class="slds-text-heading_x-large slds-m-bottom_medium">Ready to Build Your First Agent?</h2>
-      <p class="slds-text-body_regular slds-m-bottom_large">Sign up for Agentic Builder by Online Buzz Marketing LTD and launch your autonomous agent in minutes—no code required.</p>
-      <button class="slds-button slds-button_brand slds-size_medium">Get Started for Free</button>
-      <button class="slds-button slds-button_outline-brand slds-size_medium">Contact Sales</button>
-    </div>
-  </section>
-
-</body>
-</html>
